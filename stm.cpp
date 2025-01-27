@@ -63,7 +63,7 @@ int main() {
 
             int16_t gyroReadings[3];
             mpu.readGyroRaw(gyroReadings); // Corrigindo a leitura do giroscópio
-            float gZ_raw = gyroReadings[2] - gZ_offset; // Apenas eixo Z
+            float gZ_raw = gyroReadings[2] - gZ_offset;
             float gZ_filtrado = filtragem(gZ_raw);
             Velocidade_ang = gZ_filtrado * (PI / 180.0);
             movi_ang += Velocidade_ang * (intervalo / 1000.0);
